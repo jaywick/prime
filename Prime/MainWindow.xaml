@@ -1,0 +1,91 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Components="clr-namespace:Prime.Components" x:Class="Prime.MainWindow"
+        Title="Prime Beta" Height="456.5" Width="623.684" MinWidth="600" Icon="Resources/folder.png" Background="{x:Null}">
+    <Window.Resources>
+        <Style x:Key="TextBoxStyle1" TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderBrush" Value="#FFABADB3"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="KeyboardNavigation.TabNavigation" Value="None"/>
+            <Setter Property="HorizontalContentAlignment" Value="Left"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="AllowDrop" Value="True"/>
+            <Setter Property="ScrollViewer.PanningMode" Value="VerticalFirst"/>
+            <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                            <ScrollViewer x:Name="PART_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <MultiTrigger>
+                    <MultiTrigger.Conditions>
+                        <Condition Property="IsInactiveSelectionHighlightEnabled" Value="True"/>
+                        <Condition Property="IsSelectionActive" Value="False"/>
+                    </MultiTrigger.Conditions>
+                    <Setter Property="SelectionBrush" Value="{DynamicResource {x:Static SystemColors.InactiveSelectionHighlightBrushKey}}"/>
+                </MultiTrigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.Effect>
+            <DropShadowEffect ShadowDepth="3" Opacity="0.5" BlurRadius="12"/>
+        </Grid.Effect>
+
+        <StackPanel x:Name="topStack" Orientation="Vertical" VerticalAlignment="Top">
+            <StackPanel Height="24" Margin="2,0,4,0" Orientation="Horizontal" VerticalAlignment="Center">
+                <Menu HorizontalAlignment="Left" Background="White" Margin="0,3" VerticalAlignment="Center">
+                    <MenuItem Header="FILE" HeaderStringFormat="" Margin="5,0" TextOptions.TextFormattingMode="Display"/>
+                    <MenuItem Background="Transparent" Header="ORGANISE" Margin="5,0" TextOptions.TextFormattingMode="Display">
+                        <MenuItem Header="Move"/>
+                        <MenuItem Header="Duplicate"/>
+                        <MenuItem Header="Group"/>
+                        <MenuItem Header="Rename"/>
+                        <MenuItem Header="Mark"/>
+                        <MenuItem Header="Highlight">
+                            <MenuItem Header="Red"/>
+                        </MenuItem>
+                        <Separator/>
+                        <MenuItem Header="Select All"/>
+                        <MenuItem Header="Select None"/>
+                        <MenuItem Header="Select Inverse"/>
+                    </MenuItem>
+                    <MenuItem Header="SEND" Margin="5,0" TextOptions.TextFormattingMode="Display"/>
+                    <MenuItem Header="VIEW" Margin="5,0" TextOptions.TextFormattingMode="Display"/>
+                </Menu>
+            </StackPanel>
+            <ToolBar x:Name="mainToolbar" VerticalAlignment="Top" IsHitTestVisible="True" ToolBarTray.IsLocked="True" HeaderStringFormat="" Padding="0" Height="46" Background="White" BorderThickness="0,0,0,1" BorderBrush="#FFAAAAAA">
+                <Button x:Name="buttonBack" Margin="0,3" Padding="0">
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Resources/browser_back_normal.png" Stretch="Fill" Width="32" Height="32"/>
+                </Button>
+                <Button x:Name="buttonForward" Margin="0,3" Padding="0">
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Resources/browser_forward_normal.png" Stretch="Fill" Width="32" Height="32"/>
+                </Button>
+                <Button x:Name="buttonHome" Margin="0,3" Padding="0">
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Resources/browser_home_normal.png" Stretch="Fill" Width="32" Height="32"/>
+                </Button>
+                <Border x:Name="borderUrl" Height="28" VerticalAlignment="Center"  Padding="10,0,10,0" Margin="0,6" BorderBrush="#FF8B8B8B"  Background="White" BorderThickness="1" CornerRadius="4" MouseLeftButtonDown="Border_MouseLeftButtonDown" HorizontalAlignment="Center" Width="318">
+                    <DockPanel x:Name="dockAddressBar" GotKeyboardFocus="dockAddress_GotKeyboardFocus" LostKeyboardFocus="dockAddress_LostKeyboardFocus">
+                        <DockPanel x:Name="dockAddress" Visibility="Collapsed"/>
+                        <TextBox x:Name="textAddress" TextWrapping="Wrap" Text="path" VerticalAlignment="Center" BorderBrush="{x:Null}" Style="{DynamicResource TextBoxStyle1}" Margin="0,4" LostMouseCapture="textAddress_LostMouseCapture"/>
+                    </DockPanel>
+                </Border>
+                <Button x:Name="buttonMenu" Margin="0,3" Padding="0" HorizontalAlignment="Right">
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Resources/browser_tools_normal.png" Stretch="Fill" Width="32" Height="32"/>
+                </Button>
+            </ToolBar>
+        </StackPanel>
+
+        <Components:ColumnStack x:Name="columnStack" Margin="0,72,0,0" Background="White"/>
+    </Grid>
+</Window>

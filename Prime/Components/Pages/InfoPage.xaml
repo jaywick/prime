@@ -1,0 +1,16 @@
+﻿<UserControl x:Class="Prime.Components.InfoPage"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="200">
+    <Grid Background="White">
+        <StackPanel Height="300" VerticalAlignment="Top" Background="#FFE4E4E4">
+            <TextBlock x:Name="text1" Padding="5px 30px 5px 5px" TextWrapping="Wrap" Text="0 files selected" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" TextAlignment="Center" Foreground="#FF3C3C3C" FontFamily="Segoe UI Semibold" FontSize="13"/>
+            <TextBlock x:Name="text2" Padding="5px" TextWrapping="Wrap" Text="4 Folders" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" TextAlignment="Center" Foreground="#FF3C3C3C" FontFamily="Segoe UI Semibold" FontSize="13"/>
+            <TextBlock x:Name="text3" Padding="5px" TextWrapping="Wrap" Text="23434 total bytes" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" TextAlignment="Center" Foreground="#FF3C3C3C" FontFamily="Segoe UI Semibold" FontSize="13"/>
+            <TextBlock x:Name="text4" Padding="5px" TextWrapping="Wrap" Text="That's it" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" TextAlignment="Center" Foreground="#FF3C3C3C" FontFamily="Segoe UI Semibold" FontSize="13"/>
+        </StackPanel>
+    </Grid>
+</UserControl>

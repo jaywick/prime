@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Prime.App" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.Constants" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CommonTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.IgnoreFlag" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAAAAAAAAAAgAAIAAAAAAAAAA=</HashCode>
+      <FileName>CommonTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.StandardColours" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAgAAAACAAAAAQIAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CommonTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.FileSystemItem">
+    <Position X="2.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Prime.FileSystemItem.Primitives" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>CommonTypes.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQAAABAQAQEACIEAAAAEAQAAAAAAgAAEQCAAAAAAAA=</HashCode>
+      <FileName>CommonTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.File">
+    <Position X="0.5" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIEAAAAQAQAAAAAAQAAAQAABAAAAAA=</HashCode>
+      <FileName>CommonTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.Directory">
+    <Position X="4.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAKEAAAAQAQAAAAAAAAAAQAABAAAAiA=</HashCode>
+      <FileName>CommonTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.Drive" Collapsed="true">
+    <Position X="3.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAAAAAASAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>CommonTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.Jump" Collapsed="true">
+    <Position X="5.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAIEAAAAAAQAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>CommonTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.Link" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAIEAAAAAAQAAAAAAAAAAQABAAAAAAA=</HashCode>
+      <FileName>CommonTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.Extensions" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CommonTypes.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.FileSystemQuerier" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAgAAA=</HashCode>
+      <FileName>FileSystemQuerier.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.MainWindow" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAEAABAQAAACAAFAAImAQAAEFAAAABAAAAAAAAgAA=</HashCode>
+      <FileName>MainWindow.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.Components.ColumnStack" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAQCkAAASAEAAAgAiADAACAAAAQAAAQAgAAABA=</HashCode>
+      <FileName>Components\ColumnStack.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.Components.ListPageItem" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQCAAgAQgAAAAAAAAAAAAAAAAAAAAAAAAAAQAgA=</HashCode>
+      <FileName>Components\ListPageItem.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.Components.InfoPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEQAAAAAAAAA=</HashCode>
+      <FileName>Components\Pages\InfoPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prime.Components.ListPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAQAAAAQIgAAEAEQEAAEAEAAgAAAAAAICA=</HashCode>
+      <FileName>Components\Pages\ListPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prime.Components.MessagePage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Pages\MessagePage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prime.Components.PreviewPage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Pages\PreviewPage.xaml.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="DavidKoelle.AlphanumComparator" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAA=</HashCode>
+      <FileName>External\AlphanumComparator.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Prime.Properties.Resources" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABEAAAAQAAAAAAAAAAAAAAAIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Prime.Properties.Settings" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Prime.Components.IPagable" Collapsed="true">
+    <Position X="7.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Pages\IPagable.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Prime.ItemTypes" Collapsed="true">
+    <Position X="9.25" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAAAAAEgAAAAAAAAAAARAA=</HashCode>
+      <FileName>CommonTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Prime.ColumnMessages" Collapsed="true">
+    <Position X="7.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>CommonTypes.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Delegate Name="Prime.Components.ColumnDirectoryChangedEvent" Collapsed="true">
+    <Position X="7.5" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\ColumnStack.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Prime.Components.ItemDoubleClickedEventHandler" Collapsed="true">
+    <Position X="9.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\ListPageItem.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Prime.Components.SelectedFileEventHandler" Collapsed="true">
+    <Position X="12.75" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAQACAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Pages\ListPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Prime.Components.SelectedDirectoryEventHandler" Collapsed="true">
+    <Position X="11" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAABgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Pages\ListPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Prime.Components.SelectedJumpEventHandler" Collapsed="true">
+    <Position X="7.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAgIAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Pages\ListPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Prime.Components.SelectedLinkEventHandler" Collapsed="true">
+    <Position X="9.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAACAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Pages\ListPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Prime.Components.SelectedNothingEventHandler" Collapsed="true">
+    <Position X="12.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAAAAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Pages\ListPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Delegate Name="Prime.Components.SelectedMultipleEventHandler" Collapsed="true">
+    <Position X="11" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAACAABAAAAAAgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Components\Pages\ListPage.xaml.cs</FileName>
+    </TypeIdentifier>
+  </Delegate>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

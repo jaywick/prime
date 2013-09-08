@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="Prime.Components.ListPageItem"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="21.429" MouseDoubleClick="UserControl_MouseDoubleClick">
+    <Grid>
+        <Image x:Name="iconBlank" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Prime;component/Resources/file32.png" Stretch="Fill" Margin="5,0,0,0" Visibility="Hidden"/>
+        <TextBlock x:Name="textFileName" HorizontalAlignment="Left" Margin="38,2,0,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+        <Image x:Name="iconFolder" HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Prime;component/Resources/dir32.png" Stretch="Fill" Margin="5,0,0,0" Visibility="Hidden"/>
+
+    </Grid>
+</UserControl>
