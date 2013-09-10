@@ -42,7 +42,7 @@
         </Setter>
         <Style.Triggers>
             <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="DarkGray" />
+                <Setter Property="Background" Value="Red" />
                 <Setter Property="Foreground" Value="White" />
             </Trigger>
         </Style.Triggers>
@@ -82,7 +82,7 @@
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="5" />
                             <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="20" />
+                            <ColumnDefinition Width="25" />
                             <ColumnDefinition Width="5" />
                         </Grid.ColumnDefinitions>
                         <Path Name="TabFill" Margin="0 0 0 1" Grid.ColumnSpan="4" VerticalAlignment="Top" Stretch="Fill" Data="M39,96 C48.75,96 59.25,0 76,0 92.75,0 247,0 258,0 269,0 285.5,95.75 295,96">

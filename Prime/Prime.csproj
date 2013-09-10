@@ -33,6 +33,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Fluent">
       <HintPath>..\Externals\fluent\Fluent.dll</HintPath>
@@ -64,6 +68,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AlterView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\ColumnStack.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -92,6 +100,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AlterView.xaml.cs">
+      <DependentUpon>AlterView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -204,6 +215,80 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\slides.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Externals\ChromeTabs\ChromeTabs.csproj">
+      <Project>{0208352A-D75A-44B1-9C21-AA54D64D24B6}</Project>
+      <Name>ChromeTabs</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\modern\again.png" />
+    <Resource Include="Resources\modern\attribute.png" />
+    <Resource Include="Resources\modern\back.png" />
+    <Resource Include="Resources\modern\bg.png" />
+    <Resource Include="Resources\modern\bookmark.png" />
+    <Resource Include="Resources\modern\column.png" />
+    <Resource Include="Resources\modern\comment.png" />
+    <Resource Include="Resources\modern\compare.png" />
+    <Resource Include="Resources\modern\connect.png" />
+    <Resource Include="Resources\modern\console.png" />
+    <Resource Include="Resources\modern\copy.png" />
+    <Resource Include="Resources\modern\cut.png" />
+    <Resource Include="Resources\modern\date.png" />
+    <Resource Include="Resources\modern\disconnect.png" />
+    <Resource Include="Resources\modern\edit.png" />
+    <Resource Include="Resources\modern\editmacro.png" />
+    <Resource Include="Resources\modern\erase.png" />
+    <Resource Include="Resources\modern\event.png" />
+    <Resource Include="Resources\modern\filter.png" />
+    <Resource Include="Resources\modern\find.png" />
+    <Resource Include="Resources\modern\findfiles.png" />
+    <Resource Include="Resources\modern\findfolders.png" />
+    <Resource Include="Resources\modern\findnext.png" />
+    <Resource Include="Resources\modern\findprevious.png" />
+    <Resource Include="Resources\modern\flag.png" />
+    <Resource Include="Resources\modern\flags.png" />
+    <Resource Include="Resources\modern\forward.png" />
+    <Resource Include="Resources\modern\generate.png" />
+    <Resource Include="Resources\modern\groupfolder.png" />
+    <Resource Include="Resources\modern\groupview.png" />
+    <Resource Include="Resources\modern\history.png" />
+    <Resource Include="Resources\modern\home.png" />
+    <Resource Include="Resources\modern\macro.png" />
+    <Resource Include="Resources\modern\macrorecord.png" />
+    <Resource Include="Resources\modern\meta.png" />
+    <Resource Include="Resources\modern\newfile.png" />
+    <Resource Include="Resources\modern\newwindow.png" />
+    <Resource Include="Resources\modern\paste.png" />
+    <Resource Include="Resources\modern\pc.png" />
+    <Resource Include="Resources\modern\pin.png" />
+    <Resource Include="Resources\modern\properties.png" />
+    <Resource Include="Resources\modern\pushout.png" />
+    <Resource Include="Resources\modern\readonly.png" />
+    <Resource Include="Resources\modern\redo.png" />
+    <Resource Include="Resources\modern\removefilter.png" />
+    <Resource Include="Resources\modern\rename %282%29.png" />
+    <Resource Include="Resources\modern\rename.png" />
+    <Resource Include="Resources\modern\run.png" />
+    <Resource Include="Resources\modern\save.png" />
+    <Resource Include="Resources\modern\select.png" />
+    <Resource Include="Resources\modern\send.png" />
+    <Resource Include="Resources\modern\shortcut.png" />
+    <Resource Include="Resources\modern\showall.png" />
+    <Resource Include="Resources\modern\snapshot.png" />
+    <Resource Include="Resources\modern\sort.png" />
+    <Resource Include="Resources\modern\star.png" />
+    <Resource Include="Resources\modern\test.png" />
+    <Resource Include="Resources\modern\testmanager.png" />
+    <Resource Include="Resources\modern\uncomment.png" />
+    <Resource Include="Resources\modern\undo.png" />
+    <Resource Include="Resources\modern\union.png" />
+    <Resource Include="Resources\modern\user.png" />
+    <Resource Include="Resources\modern\validate.png" />
+    <Resource Include="Resources\modern\view.png" />
+    <Resource Include="Resources\modern\viewtree.png" />
+    <Resource Include="Resources\modern\watch.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

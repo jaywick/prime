@@ -58,7 +58,7 @@ namespace ChromeTabs
         {
             this.maxTabWidth = 125.0;
             this.minTabWidth = 40.0;
-            this.leftMargin = 50.0;
+            this.leftMargin = 0.0;
             this.rightMargin = 30.0;
             this.overlap = 10.0;
             this.defaultMeasureHeight = 30.0;
@@ -172,6 +172,9 @@ namespace ChromeTabs
             }
             if(source == null) { return; }
             draggedTab = source as ChromeTabItem;
+
+
+
             if(draggedTab != null && this.Children.Count > 1)
             {
                 Canvas.SetZIndex(draggedTab, 1000);
@@ -197,6 +200,21 @@ namespace ChromeTabs
                 this.InvalidateVisual();
             }
             if(this.draggedTab == null || this.draggingWindow) { return; }
+
+
+            //TEST: JW tab tear test
+            var y = e.GetPosition(this).Y;
+            bool aboveTabs = y >= this.ActualHeight * 1.5;
+            bool belowTabs = y < this.ActualHeight * -0.5;
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                Console.WriteLine(y);
+                if (aboveTabs || belowTabs)
+                    MessageBox.Show("Moved out!");
+            }
+            //end
+
+
             Point nowPoint = e.GetPosition(this);
             Thickness margin = new Thickness(nowPoint.X - this.downPoint.X, 0, this.downPoint.X - nowPoint.X, 0);
             this.draggedTab.Margin = margin;
@@ -268,7 +286,9 @@ namespace ChromeTabs
                 this.InvalidateVisual();
                 if(this.addButton.Visibility == Visibility.Visible)
                 {
-                    ParentTabControl.AddTab(new Label(), true); // HACK: Do something with default templates, here.
+                   //ParentTabControl.AddTab(new Label(), true); // HACK: Do something with default templates, here.
+                    //AddTabClick();
+                   ParentTabControl.RerouteAddTabClick();
                 }
                 return;
             }

@@ -48,6 +48,9 @@ namespace ChromeTabs
     /// </summary>
     public class ChromeTabControl : Selector
     {
+        public delegate void AddTabClickedHandler();
+        public event AddTabClickedHandler AddTabClick;
+
         internal static readonly DependencyPropertyKey CanAddTabPropertyKey = DependencyProperty.RegisterReadOnly("CanAddTab", typeof(bool), typeof(ChromeTabControl), new PropertyMetadata(true));
         public static readonly DependencyProperty CanAddTabProperty = CanAddTabPropertyKey.DependencyProperty;
         public static readonly DependencyProperty SelectedContentProperty = DependencyProperty.Register("SelectedContent", typeof(object), typeof(ChromeTabControl), new FrameworkPropertyMetadata(null, FrameworkPropertyMetadataOptions.AffectsRender));
@@ -269,5 +272,10 @@ namespace ChromeTabs
         }
 
         private Dictionary<object, DependencyObject> objectToContainerMap;
+
+        internal void RerouteAddTabClick()
+        {
+            AddTabClick();
+        }
     }
 }
