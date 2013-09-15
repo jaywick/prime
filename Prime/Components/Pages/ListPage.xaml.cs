@@ -45,7 +45,7 @@ namespace Prime.Components
             listMain.HorizontalContentAlignment = HorizontalAlignment.Stretch;
             listMain.BorderBrush = Prime.StandardColours.LightBorder;
             listMain.Background = Prime.StandardColours.Normal;
-            listMain.Width = 200;
+            listMain.Width = 250;
 
             ////listMain.Width = 200;
             //listMain.Width = Double.NaN;

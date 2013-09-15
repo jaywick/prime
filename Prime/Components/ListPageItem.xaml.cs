@@ -39,7 +39,20 @@ namespace Prime.Components
             try
             {
                 reference = FileSystemItem.DeriveType(genericReference.Path);
-                textFileName.Text = reference.Name;
+
+                if (reference is Prime.File)
+                {
+                    var fileRef = (File)reference;
+                    textFileName.Inlines.Add(new Run(fileRef.GetNameWithoutExtension()));
+                    var r = new Run(fileRef.Extension);
+                    r.Foreground = Brushes.Gray;
+                    textFileName.Inlines.Add(r);
+                }
+                else
+                {
+                    textFileName.Inlines.Add(new Run(reference.Name));
+                }
+
                 iconBlank.Source = getIcon(reference);
             }
             catch (Exception)
@@ -86,14 +99,17 @@ namespace Prime.Components
         private ImageSource getIcon(FileSystemItem item = null)
         {
             string header = "pack://application:,,,/Prime;component/Resources/";
-            string icon = "file32.png";
+            string icon = "modern-files/file.png";
 
             if (item == null)
                 icon = "empty.png";
             else if (item is Drive)
                 icon = "drive.png";
             else if (item is Directory || item is Jump)
-                icon = "folder.png";
+                //icon = "folder.png";
+                //icon = "folder-vi.png";
+                icon = "modern-files/folder.png";
+                //icon = "dir32.png";
             else
             {
                 string ext = (item as File).Extension;
@@ -105,23 +121,23 @@ namespace Prime.Components
                     case ".doc":
                     case ".docx":
                     case ".rtf":
-                        icon = "document.png";
+                        icon = "modern-files/doc.png";
                         break;
-                    case ".xls":
+                    /*case ".xls":
                     case ".xlsx":
                         icon = "excel.png";
                         break;
                     case ".ppt":
                     case ".pptx":
                         icon = "slides.png";
-                        break;
+                        break;*/
                     case ".jar":
                     case ".exe":
                     case ".bat":
                     case ".msi":
                     case ".clickonce":
                     case ".com":
-                        icon = "exe.png";
+                        icon = "modern-files/exe.png";
                         break;
                     case ".img":
                     case ".bmp":
@@ -130,12 +146,12 @@ namespace Prime.Components
                     case ".png":
                     case ".gif":
                     case ".ico":
-                        icon = "image.png";
+                        icon = "modern-files/img.png";
                         break;
                     case ".pdf":
-                        icon = "pdf.png";
+                        icon = "modern-files/doc.png";
                         break;
-                    case ".dll":
+                    /*case ".dll":
                     case ".lib":
                     case ".sys":
                         icon = "plugin.png";
@@ -144,19 +160,19 @@ namespace Prime.Components
                     case ".htm":
                     case ".url":
                         icon = "url.png";
-                        break;
+                        break;*/
                     case ".wma":
                     case ".wav":
                     case ".mp3":
                     case ".ogg":
-                        icon = "audio.png";
+                        icon = "modern-files/vid.png";
                         break;
                     case ".zip":
                     case ".rar":
                     case ".gz":
                     case ".tar":
                     case ".7z":
-                        icon = "archive.png";
+                        icon = "modern-files/zip.png";
                         break;
                     case ".avi":
                     case ".mkv":
@@ -166,7 +182,7 @@ namespace Prime.Components
                     case ".mpeg":
                     case ".mpg":
                     case ".vob":
-                        icon = "video.png";
+                        icon = "modern-files/vid.png";
                         break;
                     case ".php":
                     case ".cs":
@@ -187,7 +203,7 @@ namespace Prime.Components
                     case ".xml":
                     case ".xhtml":
                     case ".manifest":
-                        icon = "script.png";
+                        icon = "modern-files/code.png";
                         break;
                     default:
                         break;

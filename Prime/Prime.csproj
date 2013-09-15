@@ -165,7 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\dir32.png" />
-    <Resource Include="Resources\file32.png" />
+    <Resource Include="Resources\file32-g.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\browser_back_normal.png" />
@@ -223,72 +223,105 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\modern\again.png" />
-    <Resource Include="Resources\modern\attribute.png" />
-    <Resource Include="Resources\modern\back.png" />
-    <Resource Include="Resources\modern\bg.png" />
-    <Resource Include="Resources\modern\bookmark.png" />
-    <Resource Include="Resources\modern\column.png" />
-    <Resource Include="Resources\modern\comment.png" />
-    <Resource Include="Resources\modern\compare.png" />
-    <Resource Include="Resources\modern\connect.png" />
-    <Resource Include="Resources\modern\console.png" />
-    <Resource Include="Resources\modern\copy.png" />
-    <Resource Include="Resources\modern\cut.png" />
-    <Resource Include="Resources\modern\date.png" />
-    <Resource Include="Resources\modern\disconnect.png" />
-    <Resource Include="Resources\modern\edit.png" />
-    <Resource Include="Resources\modern\editmacro.png" />
-    <Resource Include="Resources\modern\erase.png" />
-    <Resource Include="Resources\modern\event.png" />
-    <Resource Include="Resources\modern\filter.png" />
-    <Resource Include="Resources\modern\find.png" />
-    <Resource Include="Resources\modern\findfiles.png" />
-    <Resource Include="Resources\modern\findfolders.png" />
-    <Resource Include="Resources\modern\findnext.png" />
-    <Resource Include="Resources\modern\findprevious.png" />
-    <Resource Include="Resources\modern\flag.png" />
-    <Resource Include="Resources\modern\flags.png" />
-    <Resource Include="Resources\modern\forward.png" />
-    <Resource Include="Resources\modern\generate.png" />
-    <Resource Include="Resources\modern\groupfolder.png" />
-    <Resource Include="Resources\modern\groupview.png" />
-    <Resource Include="Resources\modern\history.png" />
-    <Resource Include="Resources\modern\home.png" />
-    <Resource Include="Resources\modern\macro.png" />
-    <Resource Include="Resources\modern\macrorecord.png" />
-    <Resource Include="Resources\modern\meta.png" />
-    <Resource Include="Resources\modern\newfile.png" />
-    <Resource Include="Resources\modern\newwindow.png" />
-    <Resource Include="Resources\modern\paste.png" />
-    <Resource Include="Resources\modern\pc.png" />
-    <Resource Include="Resources\modern\pin.png" />
-    <Resource Include="Resources\modern\properties.png" />
-    <Resource Include="Resources\modern\pushout.png" />
-    <Resource Include="Resources\modern\readonly.png" />
-    <Resource Include="Resources\modern\redo.png" />
-    <Resource Include="Resources\modern\removefilter.png" />
-    <Resource Include="Resources\modern\rename %282%29.png" />
-    <Resource Include="Resources\modern\rename.png" />
-    <Resource Include="Resources\modern\run.png" />
-    <Resource Include="Resources\modern\save.png" />
-    <Resource Include="Resources\modern\select.png" />
-    <Resource Include="Resources\modern\send.png" />
-    <Resource Include="Resources\modern\shortcut.png" />
-    <Resource Include="Resources\modern\showall.png" />
-    <Resource Include="Resources\modern\snapshot.png" />
-    <Resource Include="Resources\modern\sort.png" />
-    <Resource Include="Resources\modern\star.png" />
-    <Resource Include="Resources\modern\test.png" />
-    <Resource Include="Resources\modern\testmanager.png" />
-    <Resource Include="Resources\modern\uncomment.png" />
-    <Resource Include="Resources\modern\undo.png" />
-    <Resource Include="Resources\modern\union.png" />
-    <Resource Include="Resources\modern\user.png" />
-    <Resource Include="Resources\modern\validate.png" />
-    <Resource Include="Resources\modern\view.png" />
-    <Resource Include="Resources\modern\viewtree.png" />
-    <Resource Include="Resources\modern\watch.png" />
+    <Resource Include="Resources\modern-tools\again.png" />
+    <Resource Include="Resources\modern-tools\attribute.png" />
+    <Resource Include="Resources\modern-tools\back.png" />
+    <Resource Include="Resources\modern-tools\bg.png" />
+    <Resource Include="Resources\modern-tools\bookmark.png" />
+    <Resource Include="Resources\modern-tools\column.png" />
+    <Resource Include="Resources\modern-tools\comment.png" />
+    <Resource Include="Resources\modern-tools\compare.png" />
+    <Resource Include="Resources\modern-tools\connect.png" />
+    <Resource Include="Resources\modern-tools\console.png" />
+    <Resource Include="Resources\modern-tools\copy.png" />
+    <Resource Include="Resources\modern-tools\cut.png" />
+    <Resource Include="Resources\modern-tools\date.png" />
+    <Resource Include="Resources\modern-tools\disconnect.png" />
+    <Resource Include="Resources\modern-tools\edit.png" />
+    <Resource Include="Resources\modern-tools\editmacro.png" />
+    <Resource Include="Resources\modern-tools\erase.png" />
+    <Resource Include="Resources\modern-tools\event.png" />
+    <Resource Include="Resources\modern-tools\filter.png" />
+    <Resource Include="Resources\modern-tools\find.png" />
+    <Resource Include="Resources\modern-tools\findfiles.png" />
+    <Resource Include="Resources\modern-tools\findfolders.png" />
+    <Resource Include="Resources\modern-tools\findnext.png" />
+    <Resource Include="Resources\modern-tools\findprevious.png" />
+    <Resource Include="Resources\modern-tools\flag.png" />
+    <Resource Include="Resources\modern-tools\flags.png" />
+    <Resource Include="Resources\modern-tools\forward.png" />
+    <Resource Include="Resources\modern-tools\generate.png" />
+    <Resource Include="Resources\modern-tools\groupfolder.png" />
+    <Resource Include="Resources\modern-tools\groupview.png" />
+    <Resource Include="Resources\modern-tools\history.png" />
+    <Resource Include="Resources\modern-tools\home.png" />
+    <Resource Include="Resources\modern-tools\macro.png" />
+    <Resource Include="Resources\modern-tools\macrorecord.png" />
+    <Resource Include="Resources\modern-tools\meta.png" />
+    <Resource Include="Resources\modern-tools\newfile.png" />
+    <Resource Include="Resources\modern-tools\newwindow.png" />
+    <Resource Include="Resources\modern-tools\paste.png" />
+    <Resource Include="Resources\modern-tools\pc.png" />
+    <Resource Include="Resources\modern-tools\pin.png" />
+    <Resource Include="Resources\modern-tools\properties.png" />
+    <Resource Include="Resources\modern-tools\pushout.png" />
+    <Resource Include="Resources\modern-tools\readonly.png" />
+    <Resource Include="Resources\modern-tools\redo.png" />
+    <Resource Include="Resources\modern-tools\removefilter.png" />
+    <Resource Include="Resources\modern-tools\rename %282%29.png" />
+    <Resource Include="Resources\modern-tools\rename.png" />
+    <Resource Include="Resources\modern-tools\run.png" />
+    <Resource Include="Resources\modern-tools\save.png" />
+    <Resource Include="Resources\modern-tools\select.png" />
+    <Resource Include="Resources\modern-tools\send.png" />
+    <Resource Include="Resources\modern-tools\shortcut.png" />
+    <Resource Include="Resources\modern-tools\showall.png" />
+    <Resource Include="Resources\modern-tools\snapshot.png" />
+    <Resource Include="Resources\modern-tools\sort.png" />
+    <Resource Include="Resources\modern-tools\star.png" />
+    <Resource Include="Resources\modern-tools\test.png" />
+    <Resource Include="Resources\modern-tools\testmanager.png" />
+    <Resource Include="Resources\modern-tools\uncomment.png" />
+    <Resource Include="Resources\modern-tools\undo.png" />
+    <Resource Include="Resources\modern-tools\union.png" />
+    <Resource Include="Resources\modern-tools\user.png" />
+    <Resource Include="Resources\modern-tools\validate.png" />
+    <Resource Include="Resources\modern-tools\view.png" />
+    <Resource Include="Resources\modern-tools\viewtree.png" />
+    <Resource Include="Resources\modern-tools\watch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\folder-vi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\modern-files\folder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\modern-tools\special.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\modern-files\file.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\modern-files\code.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\modern-files\img.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\modern-files\vid.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\modern-files\zip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\modern-files\exe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\modern-files\doc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\modern-files\txt.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

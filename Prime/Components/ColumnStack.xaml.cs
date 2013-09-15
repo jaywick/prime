@@ -10,6 +10,7 @@ using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Animation;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
@@ -29,6 +30,7 @@ namespace Prime.Components
         public ColumnStack()
         {
             InitializeComponent();
+            scrollTimer.Elapsed += scrollTimer_Elapsed;
         }
 
         public ColumnStack(Directory path)
@@ -85,6 +87,14 @@ namespace Prime.Components
                 ColumnDirectoryChanged.Invoke(item);
 
             scrollMain.ScrollToRightEnd();
+        }
+
+        System.Timers.Timer scrollTimer = new System.Timers.Timer(20);
+        double scrollOffset = 0;
+
+        void scrollTimer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
+        {
+            scrollMain.ScrollToHorizontalOffset(scrollOffset++);
         }
 
         private void clearAll()

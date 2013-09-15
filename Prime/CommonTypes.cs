@@ -50,7 +50,7 @@ namespace Prime
             return new SolidColorBrush(Color.FromRgb(r, g, b));
         }
 
-        public static Brush Home { get { return hexToBrush(0xF6, 0xF6, 0xF6); } }
+        public static Brush Home { get { return Normal; } }//hexToBrush(0xF6, 0xF6, 0xF6); } }
         public static Brush Normal { get { return hexToBrush(0xFF, 0xFF, 0xFF); } }
 
         public static Brush LightBorder { get { return hexToBrush(0xF1, 0xF1, 0xF1); } }
@@ -196,6 +196,11 @@ namespace Prime
         public override ItemTypes Type { get { return ItemTypes.File; } }
 
         public string Extension { get { return destination.Extension; } }
+        
+        public string GetNameWithoutExtension()
+        {
+            return Name.Substring(0, Name.Length - Extension.Length);
+        }
 
         public override string ToString()
         {

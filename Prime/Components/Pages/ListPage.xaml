@@ -6,7 +6,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300" Width="Auto">
     <Grid>
-        <ListBox x:Name="listMain">
+        <ListBox Padding="0px 10px" x:Name="listMain">
         </ListBox>
         <TextBlock x:Name="textEmpty" Margin="0,40,0,0" Text="This folder is currently empty" VerticalAlignment="Top" HorizontalAlignment="Center" Width="200" TextAlignment="Center" FontSize="12" Foreground="#FF9E9E9E" FontFamily="Segoe UI" Padding="40,0" Height="44" TextWrapping="Wrap" Visibility="Collapsed"/>
     </Grid>

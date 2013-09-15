@@ -92,21 +92,6 @@ namespace ChromeTabs
                 Close();
         }
 
-        protected override void OnMouseLeave(MouseEventArgs e)
-        {
-            base.OnMouseLeave(e);
-
-            /*var y = e.GetPosition(this).Y;
-            bool aboveTabs = y >= this.ActualHeight;
-            bool belowTabs = y < 0;
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                Console.WriteLine(y);
-                if (aboveTabs || belowTabs)
-                    MessageBox.Show("Moved out!");
-            }*/ //TEST: testing tab tearing
-        }
-
         protected override void OnKeyDown(KeyEventArgs e)
         {
             base.OnKeyDown(e);
