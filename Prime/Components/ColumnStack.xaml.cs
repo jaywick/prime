@@ -232,5 +232,9 @@ namespace Prime.Components
         }
 
         #endregion
+
+        private void textAddress_LostMouseCapture(object sender, MouseEventArgs e)
+        {
+        }
     }
 }

@@ -4,7 +4,6 @@
         xmlns:ChromeTabs="clr-namespace:ChromeTabs;assembly=ChromeTabs" xmlns:Components="clr-namespace:Prime.Components" x:Class="Prime.AlterView"
         Title="Prime" Height="554" Width="838" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
     <Grid>
-
         <ChromeTabs:ChromeTabControl x:Name="tabs" TextOptions.TextFormattingMode="Display">
             <!--<ChromeTabs:ChromeTabPanel Height="Auto" Width="Auto">
                 <Button Content="Button" Height="Auto" Width="Auto"/>

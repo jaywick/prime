@@ -63,20 +63,20 @@
             <ToolBar x:Name="mainToolbar" VerticalAlignment="Top" IsHitTestVisible="True" ToolBarTray.IsLocked="True" HeaderStringFormat="" Padding="0" Background="White" BorderThickness="0,0,0,1" BorderBrush="#FFAAAAAA">
                 <Button x:Name="buttonBack" Margin="0,3" Padding="0">
                     <StackPanel Orientation="Horizontal">
-                        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Resources/modern/back.png" Stretch="Fill" Width="16" Height="16"/>
+                        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Prime;component/Resources/modern-tools/back.png" Stretch="Fill" Width="16" Height="16"/>
                         <TextBlock><Run Text="Back"/></TextBlock>
                     </StackPanel>
                 </Button>
                 <Button x:Name="buttonForward" Margin="0,3" Padding="0">
-                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Resources/modern/forward.png" Stretch="Fill" Width="16" Height="16"/>
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Prime;component/Resources/modern-tools/forward.png" Stretch="Fill" Width="16" Height="16"/>
                 </Button>
                 <Button x:Name="buttonHome" Margin="0,3" Padding="0">
-                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="Resources/modern/home.png" Stretch="Fill" Width="16" Height="16"/>
+                    <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Prime;component/Resources/modern-tools/home.png" Stretch="Fill" Width="16" Height="16"/>
                 </Button>
                 <Border  Visibility="Collapsed" x:Name="borderUrl" Height="28" VerticalAlignment="Center"  Padding="10,0,10,0" Margin="0,6" BorderBrush="#FF8B8B8B"  Background="White" BorderThickness="1" CornerRadius="4" MouseLeftButtonDown="Border_MouseLeftButtonDown" HorizontalAlignment="Center" Width="318">
                     <DockPanel x:Name="dockAddressBar" GotKeyboardFocus="dockAddress_GotKeyboardFocus" LostKeyboardFocus="dockAddress_LostKeyboardFocus">
                         <DockPanel x:Name="dockAddress" Visibility="Collapsed"/>
-                        <TextBox x:Name="textAddress" TextWrapping="Wrap" Text="path" VerticalAlignment="Center" BorderBrush="{x:Null}" Style="{DynamicResource TextBoxStyle1}" Margin="0,4" LostMouseCapture="textAddress_LostMouseCapture"/>
+                        <TextBox x:Name="textAddress" TextWrapping="Wrap" Text="path" VerticalAlignment="Center" BorderBrush="{x:Null}" Style="{DynamicResource TextBoxStyle1}" Margin="0,4"/>
                     </DockPanel>
                 </Border>
                 <Button x:Name="buttonMenu" Margin="0,3" Padding="0" HorizontalAlignment="Right">

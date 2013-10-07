@@ -1,11 +1,149 @@
-﻿<UserControl x:Class="Prime.Components.ColumnStack"
+﻿<UserControl
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="Prime.Components.ColumnStack" 
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
-    <ScrollViewer x:Name="scrollMain"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
-        <StackPanel x:Name="stackMain" Orientation="Horizontal"/>
-    </ScrollViewer>
+             d:DesignHeight="300" Width="Auto">
+    <UserControl.Resources>
+        <Style x:Key="ToolBarStyle1" TargetType="{x:Type ToolBar}">
+            <Setter Property="Background" Value="#FFEEF5FD"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ToolBar}">
+                        <Grid x:Name="Grid" Margin="3,1,1,1" SnapsToDevicePixels="True">
+                            <Grid x:Name="OverflowGrid" HorizontalAlignment="Right">
+                                <Popup x:Name="OverflowPopup" AllowsTransparency="True" Focusable="False" IsOpen="{Binding IsOverflowOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Placement="Bottom" StaysOpen="False">
+                                    <Themes:SystemDropShadowChrome x:Name="Shdw" Color="Transparent">
+                                        <Border x:Name="ToolBarSubMenuBorder" BorderBrush="#FFB6BDC5" BorderThickness="1" Background="#FFEEF5FD" RenderOptions.ClearTypeHint="Enabled">
+                                            <ToolBarOverflowPanel x:Name="PART_ToolBarOverflowPanel" KeyboardNavigation.DirectionalNavigation="Cycle" FocusVisualStyle="{x:Null}" Focusable="True" Margin="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.TabNavigation="Cycle" WrapWidth="200"/>
+                                        </Border>
+                                    </Themes:SystemDropShadowChrome>
+                                </Popup>
+                            </Grid>
+                            <Border x:Name="MainPanelBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Margin="0">
+                                <Border.Style>
+                                    <Style TargetType="{x:Type Border}">
+                                        <Setter Property="Margin" Value="0,0,11,0"/>
+                                        <Setter Property="CornerRadius" Value="3"/>
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding}" Value="true">
+                                                <Setter Property="CornerRadius" Value="0"/>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Border.Style>
+                                <DockPanel KeyboardNavigation.TabIndex="1" KeyboardNavigation.TabNavigation="Local">
+                                    <Thumb x:Name="ToolBarThumb" Margin="-3,-1,0,0" Padding="6,5,1,6" Width="10">
+                                        <Thumb.Style>
+                                            <Style TargetType="{x:Type Thumb}">
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="{x:Type Thumb}">
+                                                            <Border Background="Transparent" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True">
+                                                                <Rectangle>
+                                                                    <Rectangle.Fill>
+                                                                        <DrawingBrush TileMode="Tile" Viewbox="0,0,4,4" Viewport="0,0,4,4" ViewportUnits="Absolute" ViewboxUnits="Absolute">
+                                                                            <DrawingBrush.Drawing>
+                                                                                <DrawingGroup>
+                                                                                    <GeometryDrawing Brush="White" Geometry="M1,1L1,3 3,3 3,1z"/>
+                                                                                    <GeometryDrawing Brush="#FF6D6D6D" Geometry="M0,0L0,2 2,2 2,0z"/>
+                                                                                </DrawingGroup>
+                                                                            </DrawingBrush.Drawing>
+                                                                        </DrawingBrush>
+                                                                    </Rectangle.Fill>
+                                                                </Rectangle>
+                                                            </Border>
+                                                            <ControlTemplate.Triggers>
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Setter Property="Cursor" Value="SizeAll"/>
+                                                                </Trigger>
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </Thumb.Style>
+                                    </Thumb>
+                                    <ContentPresenter x:Name="ToolBarHeader" ContentTemplate="{TemplateBinding HeaderTemplate}" Content="{TemplateBinding Header}" ContentStringFormat="{TemplateBinding HeaderStringFormat}" ContentSource="Header" HorizontalAlignment="Center" Margin="4,0" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="Center"/>
+                                    <ToolBarPanel x:Name="PART_ToolBarPanel" IsItemsHost="True" Margin="0,1,2,2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
+                                </DockPanel>
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsOverflowOpen" Value="True">
+                                <Setter Property="IsEnabled" TargetName="ToolBarThumb" Value="False"/>
+                            </Trigger>
+                            <Trigger Property="Header" Value="{x:Null}">
+                                <Setter Property="Visibility" TargetName="ToolBarHeader" Value="Collapsed"/>
+                            </Trigger>
+                            <Trigger Property="ToolBarTray.IsLocked" Value="True">
+                                <Setter Property="Visibility" TargetName="ToolBarThumb" Value="Collapsed"/>
+                            </Trigger>
+                            <Trigger Property="HasDropShadow" SourceName="OverflowPopup" Value="True">
+                                <Setter Property="Margin" TargetName="Shdw" Value="0,0,5,5"/>
+                                <Setter Property="SnapsToDevicePixels" TargetName="Shdw" Value="True"/>
+                                <Setter Property="Color" TargetName="Shdw" Value="#71000000"/>
+                            </Trigger>
+                            <Trigger Property="Orientation" Value="Vertical">
+                                <Setter Property="Margin" TargetName="Grid" Value="1,3,1,1"/>
+                                <Setter Property="Height" TargetName="ToolBarThumb" Value="10"/>
+                                <Setter Property="Width" TargetName="ToolBarThumb" Value="Auto"/>
+                                <Setter Property="Margin" TargetName="ToolBarThumb" Value="-1,-3,0,0"/>
+                                <Setter Property="Padding" TargetName="ToolBarThumb" Value="5,6,6,1"/>
+                                <Setter Property="Margin" TargetName="ToolBarHeader" Value="0,0,0,4"/>
+                                <Setter Property="Margin" TargetName="PART_ToolBarPanel" Value="1,0,2,2"/>
+                                <Setter Property="DockPanel.Dock" TargetName="ToolBarThumb" Value="Top"/>
+                                <Setter Property="DockPanel.Dock" TargetName="ToolBarHeader" Value="Top"/>
+                                <Setter Property="HorizontalAlignment" TargetName="OverflowGrid" Value="Stretch"/>
+                                <Setter Property="VerticalAlignment" TargetName="OverflowGrid" Value="Bottom"/>
+                                <Setter Property="Placement" TargetName="OverflowPopup" Value="Right"/>
+                                <Setter Property="Margin" TargetName="MainPanelBorder" Value="0,0,0,11"/>
+                                <Setter Property="Background" Value="#FFEEF5FD"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding}" Value="true">
+                    <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                </DataTrigger>
+            </Style.Triggers>
+        </Style>
+    </UserControl.Resources>
+    <StackPanel Orientation="Vertical">
+        <ToolBar x:Name="mainToolbar" VerticalAlignment="Top" IsHitTestVisible="True" ToolBarTray.IsLocked="True" HeaderStringFormat="" Padding="0" Background="White" BorderThickness="0,0,0,1" BorderBrush="#FFAAAAAA" Style="{DynamicResource ToolBarStyle1}">
+            <ToolBar.Resources>
+                <Style TargetType="{x:Type ToolBarPanel}">
+                    <Setter Property="Orientation" Value="Horizontal"/>
+                </Style>
+            </ToolBar.Resources>
+            <Button x:Name="buttonBack" Margin="0,3" Padding="0">
+                <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Prime;component/Resources/browser_back_normal.png" Stretch="Fill" Width="32" Height="32"/>
+            </Button>
+            <Button x:Name="buttonForward" Margin="0,3" Padding="0">
+                <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Prime;component/Resources/browser_forward_normal.png" Stretch="Fill" Width="32" Height="32"/>
+            </Button>
+            <Button x:Name="buttonHome" Margin="0,3" Padding="0">
+                <TextBox Margin="0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="293" HorizontalAlignment="Stretch" Height="29" VerticalContentAlignment="Center" FontSize="16"/>
+            </Button>
+            <Border  Visibility="Collapsed" x:Name="borderUrl" Height="28" VerticalAlignment="Center" Padding="10,0,10,0" Margin="0,6" BorderBrush="#FF8B8B8B"  Background="White" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Center" Width="318">
+                <DockPanel x:Name="dockAddressBar">
+                    <DockPanel x:Name="dockAddress" Visibility="Collapsed"/>
+                    <TextBox x:Name="textAddress" TextWrapping="Wrap" Text="path" VerticalAlignment="Center" BorderBrush="{x:Null}" Margin="0,4"/>
+                </DockPanel>
+            </Border>
+            <Button x:Name="buttonMenu" Margin="0,3" Padding="0" HorizontalAlignment="Center">
+                <Image HorizontalAlignment="Right" VerticalAlignment="Top" Source="/Prime;component/Resources/browser_tools_normal.png" Stretch="Fill" Width="32" Height="32"/>
+            </Button>
+        </ToolBar>
+        <ScrollViewer x:Name="scrollMain"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+            <StackPanel x:Name="stackMain" Orientation="Horizontal"/>
+        </ScrollViewer>
+    </StackPanel>
 </UserControl>

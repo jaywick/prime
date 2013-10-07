@@ -221,8 +221,5 @@ namespace Prime
             displayAddressBar(rich: true);
         }
 
-        private void textAddress_LostMouseCapture(object sender, MouseEventArgs e)
-        {
-        }
     }
 }
