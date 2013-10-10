@@ -41,12 +41,15 @@ namespace Prime.Components
         {
             InitializeComponent();
             listMain.SelectionMode = SelectionMode.Extended;
-            listMain.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
+            /*listMain.HorizontalAlignment = System.Windows.HorizontalAlignment.Left;
             listMain.HorizontalContentAlignment = HorizontalAlignment.Stretch;
+            listMain.VerticalAlignment = VerticalAlignment.Stretch;
+            listMain.VerticalContentAlignment = VerticalAlignment.Stretch;*/
             listMain.BorderBrush = Prime.StandardColours.LightBorder;
             listMain.Background = Prime.StandardColours.Normal;
+            
             listMain.Width = 250;
-
+            
             ////listMain.Width = 200;
             //listMain.Width = Double.NaN;
             //listMain.MinWidth = 200;

@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ChromeTabs;
+using Prime.Components;
 
 namespace Prime
 {
@@ -31,9 +33,22 @@ namespace Prime
             tabs.AddTabClick += tabs_AddTabClick;
         }
 
+        Dictionary<ColumnStack, ChromeTabItem> hash = new Dictionary<ColumnStack,ChromeTabItem>();
         void tabs_AddTabClick()
         {
-            tabs.AddTab(new Prime.Components.ColumnStack(new Directory(debug_firstlocation)), true);
+            //tabs.AddTab(new Prime.Components.ColumnStack(new Directory(debug_firstlocation)), "Header", true);
+            var columns = new ColumnStack(new Directory(debug_firstlocation));
+            columns.ColumnDirectoryChanged += columns_ColumnDirectoryChanged;
+            var tab = new ChromeTabItem() { Header = "ohhai", Content = columns, IsSelected = true };
+
+            tabs.Items.Add(tab);
+
+            hash.Add(columns, tab);
+        }
+
+        void columns_ColumnDirectoryChanged(object sender, Directory newPath)
+        {
+            hash[sender as ColumnStack].Header = newPath.Name;
         }
         
     }

@@ -17,7 +17,7 @@ using System.Windows.Shapes;
 
 namespace Prime.Components
 {
-    public delegate void ColumnDirectoryChangedEvent(Directory newPath);
+    public delegate void ColumnDirectoryChangedEvent(object sender, Directory newPath);
     public partial class ColumnStack : UserControl
     {
         private Directory currentPath;
@@ -84,7 +84,7 @@ namespace Prime.Components
 
             // broadcast changes
             if (ColumnDirectoryChanged != null)
-                ColumnDirectoryChanged.Invoke(item);
+                ColumnDirectoryChanged.Invoke(this, item);
 
             scrollMain.ScrollToRightEnd();
         }

@@ -213,10 +213,9 @@ namespace Prime
 
             // subscribe to events
             columnStack.ColumnDirectoryChanged += columnStack_ColumnDirectoryChanged;
-
         }
 
-        void columnStack_ColumnDirectoryChanged(Directory newPath)
+        void columnStack_ColumnDirectoryChanged(object sender, Directory newPath)
         {
             displayAddressBar(rich: true);
         }

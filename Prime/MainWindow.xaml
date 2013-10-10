@@ -3,7 +3,7 @@
         xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:Components="clr-namespace:Prime.Components" xmlns:ChromeTabs="clr-namespace:ChromeTabs;assembly=ChromeTabs" x:Class="Prime.MainWindow"
-        Title="Prime Beta" Height="456.5" Width="623.684" MinWidth="600" Icon="Resources/folder.png" Background="{x:Null}">
+        Title="Prime Beta" Height="634.5" Width="1011.684" MinWidth="600" Icon="Resources/folder.png" Background="{x:Null}">
     <Window.Resources>
         <Style x:Key="TextBoxStyle1" TargetType="{x:Type TextBox}">
             <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
@@ -37,8 +37,8 @@
         </Style>
     </Window.Resources>
 
-    <Grid x:Name="LayoutRoot" Background="White">
-        <StackPanel x:Name="topStack" Orientation="Vertical" VerticalAlignment="Top">
+    <Grid x:Name="LayoutRoot">
+        <StackPanel x:Name="topStack" Orientation="Vertical" Visibility="Collapsed">
             <StackPanel Height="24" Margin="2,0,4,0" Orientation="Horizontal" VerticalAlignment="Center">
                 <Menu HorizontalAlignment="Left" Background="White" Margin="0,3" VerticalAlignment="Center">
                     <MenuItem Header="FILE" HeaderStringFormat="" Margin="5,0" TextOptions.TextFormattingMode="Display"/>
@@ -84,6 +84,6 @@
                 </Button>
             </ToolBar>
         </StackPanel>
-        <Components:ColumnStack x:Name="columnStack" Margin="0,0,0,0" Background="White"/>
+        <Components:ColumnStack x:Name="columnStack" Margin="0" Background="White" Height="Auto" Width="Auto"/>
     </Grid>
 </Window>

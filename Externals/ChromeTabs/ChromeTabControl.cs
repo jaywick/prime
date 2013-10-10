@@ -60,7 +60,7 @@ namespace ChromeTabs
             DefaultStyleKeyProperty.OverrideMetadata(typeof(ChromeTabControl), new FrameworkPropertyMetadata(typeof(ChromeTabControl)));
         }
 
-        public void AddTab(object tab, bool select)
+        public void AddTab(object tab, string header, bool select)
         {
             if(!CanAddTab)
             {

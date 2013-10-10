@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:Themes="clr-namespace:Microsoft.Windows.Themes;assembly=PresentationFramework.Aero2" x:Class="Prime.Components.ColumnStack" 
-             mc:Ignorable="d" 
-             d:DesignHeight="300" Width="Auto">
+             xmlns:p="Prime.Components.ListPage"
+             xmlns:local="clr-namespace:Prime.Components" 
+             x:Class="Prime.Components.ColumnStack"
+             mc:Ignorable="d">
     <UserControl.Resources>
         <Style x:Key="ToolBarStyle1" TargetType="{x:Type ToolBar}">
             <Setter Property="Background" Value="#FFEEF5FD"/>
@@ -15,11 +16,11 @@
                         <Grid x:Name="Grid" Margin="3,1,1,1" SnapsToDevicePixels="True">
                             <Grid x:Name="OverflowGrid" HorizontalAlignment="Right">
                                 <Popup x:Name="OverflowPopup" AllowsTransparency="True" Focusable="False" IsOpen="{Binding IsOverflowOpen, RelativeSource={RelativeSource TemplatedParent}}" PopupAnimation="{DynamicResource {x:Static SystemParameters.ComboBoxPopupAnimationKey}}" Placement="Bottom" StaysOpen="False">
-                                    <Themes:SystemDropShadowChrome x:Name="Shdw" Color="Transparent">
-                                        <Border x:Name="ToolBarSubMenuBorder" BorderBrush="#FFB6BDC5" BorderThickness="1" Background="#FFEEF5FD" RenderOptions.ClearTypeHint="Enabled">
-                                            <ToolBarOverflowPanel x:Name="PART_ToolBarOverflowPanel" KeyboardNavigation.DirectionalNavigation="Cycle" FocusVisualStyle="{x:Null}" Focusable="True" Margin="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.TabNavigation="Cycle" WrapWidth="200"/>
-                                        </Border>
-                                    </Themes:SystemDropShadowChrome>
+
+                                    <Border x:Name="ToolBarSubMenuBorder" BorderBrush="#FFB6BDC5" BorderThickness="1" Background="#FFEEF5FD" RenderOptions.ClearTypeHint="Enabled">
+                                        <ToolBarOverflowPanel x:Name="PART_ToolBarOverflowPanel" KeyboardNavigation.DirectionalNavigation="Cycle" FocusVisualStyle="{x:Null}" Focusable="True" Margin="2" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" KeyboardNavigation.TabNavigation="Cycle" WrapWidth="200"/>
+                                    </Border>
+
                                 </Popup>
                             </Grid>
                             <Border x:Name="MainPanelBorder" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Margin="0">
@@ -81,11 +82,6 @@
                             <Trigger Property="ToolBarTray.IsLocked" Value="True">
                                 <Setter Property="Visibility" TargetName="ToolBarThumb" Value="Collapsed"/>
                             </Trigger>
-                            <Trigger Property="HasDropShadow" SourceName="OverflowPopup" Value="True">
-                                <Setter Property="Margin" TargetName="Shdw" Value="0,0,5,5"/>
-                                <Setter Property="SnapsToDevicePixels" TargetName="Shdw" Value="True"/>
-                                <Setter Property="Color" TargetName="Shdw" Value="#71000000"/>
-                            </Trigger>
                             <Trigger Property="Orientation" Value="Vertical">
                                 <Setter Property="Margin" TargetName="Grid" Value="1,3,1,1"/>
                                 <Setter Property="Height" TargetName="ToolBarThumb" Value="10"/>
@@ -116,8 +112,8 @@
             </Style.Triggers>
         </Style>
     </UserControl.Resources>
-    <StackPanel Orientation="Vertical">
-        <ToolBar x:Name="mainToolbar" VerticalAlignment="Top" IsHitTestVisible="True" ToolBarTray.IsLocked="True" HeaderStringFormat="" Padding="0" Background="White" BorderThickness="0,0,0,1" BorderBrush="#FFAAAAAA" Style="{DynamicResource ToolBarStyle1}">
+    <DockPanel>
+        <ToolBar x:Name="mainToolbar" VerticalAlignment="Top" IsHitTestVisible="True" ToolBarTray.IsLocked="True" HeaderStringFormat="" Padding="0" Background="White" BorderThickness="0,0,0,1" BorderBrush="#FFAAAAAA" DockPanel.Dock="Top" >
             <ToolBar.Resources>
                 <Style TargetType="{x:Type ToolBarPanel}">
                     <Setter Property="Orientation" Value="Horizontal"/>
@@ -130,7 +126,7 @@
                 <Image HorizontalAlignment="Left" VerticalAlignment="Top" Source="/Prime;component/Resources/browser_forward_normal.png" Stretch="Fill" Width="32" Height="32"/>
             </Button>
             <Button x:Name="buttonHome" Margin="0,3" Padding="0">
-                <TextBox Margin="0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="293" HorizontalAlignment="Stretch" Height="29" VerticalContentAlignment="Center" FontSize="16"/>
+                <TextBox Margin="0" TextWrapping="Wrap" Text="User &gt; Files" VerticalAlignment="Top" Width="293" HorizontalAlignment="Stretch" Height="29" VerticalContentAlignment="Center" FontSize="14" TextOptions.TextFormattingMode="Display"/>
             </Button>
             <Border  Visibility="Collapsed" x:Name="borderUrl" Height="28" VerticalAlignment="Center" Padding="10,0,10,0" Margin="0,6" BorderBrush="#FF8B8B8B"  Background="White" BorderThickness="1" CornerRadius="4" HorizontalAlignment="Center" Width="318">
                 <DockPanel x:Name="dockAddressBar">
@@ -145,5 +141,6 @@
         <ScrollViewer x:Name="scrollMain"  HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
             <StackPanel x:Name="stackMain" Orientation="Horizontal"/>
         </ScrollViewer>
-    </StackPanel>
+        
+    </DockPanel>
 </UserControl>
