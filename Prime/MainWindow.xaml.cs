@@ -91,17 +91,6 @@ namespace Prime
             staggeredStart();
         }
 
-        /*private void checkWidth()
-        {
-            if (columns.Count == 0) return;
-
-            var transform = columns.Last().TransformToVisual(this.LayoutRoot);
-            double right = transform.Transform(new Point(0, 0)).X + columns.Last().ActualWidth;
-
-            if (right > this.Width)
-                this.SizeToContent = System.Windows.SizeToContent.Width;
-        }*/
-
         #region Address Bar
         //TODO: make into user control
         private void displayAddressBar(bool rich = true)
@@ -212,13 +201,10 @@ namespace Prime
             columnStack.Initialise(new Prime.Directory(Preferences.Instance.HomeFolderPath));
 
             // subscribe to events
-            columnStack.ColumnDirectoryChanged += columnStack_ColumnDirectoryChanged;
-        }
+            columnStack.ColumnDirectoryChanged += (o, e) => { displayAddressBar(rich: true); };
 
-        void columnStack_ColumnDirectoryChanged(object sender, Directory newPath)
-        {
-            displayAddressBar(rich: true);
+            // add tab
+            
         }
-
     }
 }

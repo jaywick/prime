@@ -37,6 +37,9 @@
     <StartupObject>
     </StartupObject>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\modern-tools\special.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Fluent">
       <HintPath>..\Externals\fluent\Fluent.dll</HintPath>
@@ -323,6 +326,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\modern-files\txt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\app_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

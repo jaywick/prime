@@ -31,6 +31,7 @@ namespace Prime
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             tabs.AddTabClick += tabs_AddTabClick;
+            tabs_AddTabClick();
         }
 
         Dictionary<ColumnStack, ChromeTabItem> hash = new Dictionary<ColumnStack,ChromeTabItem>();
@@ -39,11 +40,17 @@ namespace Prime
             //tabs.AddTab(new Prime.Components.ColumnStack(new Directory(debug_firstlocation)), "Header", true);
             var columns = new ColumnStack(new Directory(debug_firstlocation));
             columns.ColumnDirectoryChanged += columns_ColumnDirectoryChanged;
-            var tab = new ChromeTabItem() { Header = "ohhai", Content = columns, IsSelected = true };
+            columns.Loaded += columns_Loaded;
+            var tab = new ChromeTabItem() { Header = "", Content = columns, IsSelected = true };
 
             tabs.Items.Add(tab);
 
             hash.Add(columns, tab);
+        }
+
+        void columns_Loaded(object sender, RoutedEventArgs e)
+        {
+            hash[sender as ColumnStack].Header = (sender as ColumnStack).CurrentDirectory.Name;
         }
 
         void columns_ColumnDirectoryChanged(object sender, Directory newPath)
