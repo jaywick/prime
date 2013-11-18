@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
+using Prime.FileSystem;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -37,13 +37,13 @@ namespace Prime
 
         private static List<Directory> getDirs(string path)
         {
-            var dir = new DirectoryInfo(path);
+            var dir = new System.IO.DirectoryInfo(path);
 
             try
             {
                 var query = from d in dir.GetDirectories()
-                            where !d.Attributes.HasFlag(FileAttributes.Hidden)
-                                  && !d.Attributes.HasFlag(FileAttributes.System)
+                            where !d.Attributes.HasFlag(System.IO.FileAttributes.Hidden)
+                                  && !d.Attributes.HasFlag(System.IO.FileAttributes.System)
                                   && !d.Name.StartsWith(".")
                             select new Directory(d);
                 query = query.OrderBy(x => x.Name, new DavidKoelle.AlphanumComparator());
@@ -57,11 +57,11 @@ namespace Prime
         {
             try
             {
-                var dir = new DirectoryInfo(path);
+                var dir = new System.IO.DirectoryInfo(path);
                 var query = from f in dir.GetFiles()
-                            where !f.Attributes.HasFlag(FileAttributes.Hidden)
-                                  && !f.Attributes.HasFlag(FileAttributes.System)
-                                  && !f.Attributes.HasFlag(FileAttributes.Temporary)
+                            where !f.Attributes.HasFlag(System.IO.FileAttributes.Hidden)
+                                  && !f.Attributes.HasFlag(System.IO.FileAttributes.System)
+                                  && !f.Attributes.HasFlag(System.IO.FileAttributes.Temporary)
                                   && !f.Name.StartsWith(".")
                                   && f.Name != "desktop.ini"
                                   && f.Name != "thumbs.db"

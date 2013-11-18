@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Prime.FileSystem;
 
 namespace Prime.Components
 {
@@ -31,7 +31,7 @@ namespace Prime.Components
         public event SelectedLinkEventHandler SelectedLink;
         public event SelectedNothingEventHandler SelectedNothing;
         public event SelectedMultipleEventHandler SelectedMultiple;
-        public event ItemDoubleClickedEventHandler ItemDoubleClicked;
+        public event ItemActionEventHandler ItemDoubleClicked;
 
         private Directory directory;
 
@@ -45,11 +45,11 @@ namespace Prime.Components
             listMain.HorizontalContentAlignment = HorizontalAlignment.Stretch;
             listMain.VerticalAlignment = VerticalAlignment.Stretch;
             listMain.VerticalContentAlignment = VerticalAlignment.Stretch;*/
-            listMain.BorderBrush = Prime.StandardColours.LightBorder;
-            listMain.Background = Prime.StandardColours.Normal;
-            
+            listMain.BorderBrush = Prime.FileSystem.StandardColours.LightBorder;
+            listMain.Background = Prime.FileSystem.StandardColours.Normal;
+
             listMain.Width = 250;
-            
+
             ////listMain.Width = 200;
             //listMain.Width = Double.NaN;
             //listMain.MinWidth = 200;
@@ -64,7 +64,7 @@ namespace Prime.Components
             this.directory = directory;
 
             if (isHome)
-                listMain.Background = Prime.StandardColours.Home;
+                listMain.Background = StandardColours.Home;
 
             if (directory == FileSystemItem.Root)
                 loadRoot(selection);
@@ -80,7 +80,9 @@ namespace Prime.Components
             foreach (var drive in System.IO.DriveInfo.GetDrives())
             {
                 var newItem = new ListPageItem(new Directory(drive.RootDirectory));
+
                 newItem.ItemDoubleClicked += newItem_ItemDoubleClicked;
+                newItem.ItemRightClicked += newItem_ItemRightClicked;
 
                 listMain.Items.Add(newItem);
                 if (selection != null && FileSystemItem.IsSamePath(selection, drive.RootDirectory.FullName))
@@ -90,6 +92,24 @@ namespace Prime.Components
                     ignoreSelectionChanges.Stop();
                 }
             }
+        }
+
+        void newItem_ItemRightClicked(ListPageItem listItem, FileSystemItem reference)
+        {
+            var menu = new ContextMenu();
+
+            menu.Items.Add(new MenuItem()
+            {
+                Header = "Rename"
+            });
+
+            listItem.ContextMenu = menu;
+        }
+
+        void newItem_ItemDoubleClicked(ListPageItem listItem, FileSystemItem reference)
+        {
+            // bubble event to parent (column)
+            if (ItemDoubleClicked != null) ItemDoubleClicked.Invoke(listItem, reference);
         }
 
         IgnoreFlag ignoreSelectionChanges = new IgnoreFlag();
@@ -109,6 +129,8 @@ namespace Prime.Components
                 {
                     var newItem = new ListPageItem(item);
                     newItem.ItemDoubleClicked += newItem_ItemDoubleClicked;
+                    newItem.ItemRightClicked += newItem_ItemRightClicked;
+
                     listMain.Items.Add(newItem);
 
                     if (selection != null && FileSystemItem.IsSamePath(selection, item.Path))
@@ -134,6 +156,13 @@ namespace Prime.Components
         void listMain_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (ignoreSelectionChanges.IsBlocked) return;
+
+            foreach (ListPageItem added in e.AddedItems)
+                added.Selected = true;
+
+            foreach (ListPageItem added in e.RemovedItems)
+                added.Selected = false;
+
 
             var count = listMain.SelectedItems.Count;
             if (count == 0)
@@ -161,13 +190,6 @@ namespace Prime.Components
 
                 SelectedMultiple.Invoke(this, directory, items.ToArray());
             }
-        }
-
-        void newItem_ItemDoubleClicked(FileSystemItem reference)
-        {
-            // bubble event to parent (column)
-            if (ItemDoubleClicked != null)
-                ItemDoubleClicked.Invoke(reference);
         }
 
         private void getRealIcon()

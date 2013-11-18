@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
+using Prime.FileSystem;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -182,7 +182,7 @@ namespace Prime.Components
             return list;
         }
 
-        void list_ItemDoubleClicked(FileSystemItem reference)
+        void list_ItemDoubleClicked(ListPageItem listItem, FileSystemItem reference)
         {
             if (reference.Type == ItemTypes.File || reference.Type == ItemTypes.FileShortcut)
                 System.Diagnostics.Process.Start(reference.Path);

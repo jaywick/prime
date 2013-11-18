@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,10 +12,11 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Prime.FileSystem;
 
 namespace Prime.Components
 {
-    public delegate void ItemDoubleClickedEventHandler(FileSystemItem reference);
+    public delegate void ItemActionEventHandler(ListPageItem listItem, FileSystemItem reference);
 
     public partial class ListPageItem : UserControl
     {
@@ -25,7 +25,8 @@ namespace Prime.Components
         public FileSystemItem Reference { get { return reference; } }
         public ItemTypes ItemType { get { return reference.Type; } }
 
-        public event ItemDoubleClickedEventHandler ItemDoubleClicked;
+        public event ItemActionEventHandler ItemDoubleClicked;
+        public event ItemActionEventHandler ItemRightClicked;
 
         public ListPageItem()
         {
@@ -40,7 +41,7 @@ namespace Prime.Components
             {
                 reference = FileSystemItem.DeriveType(genericReference.Path);
 
-                if (reference is Prime.File)
+                if (reference is File)
                 {
                     var fileRef = (File)reference;
                     textFileName.Inlines.Add(new Run(fileRef.GetNameWithoutExtension()));
@@ -60,7 +61,7 @@ namespace Prime.Components
                 textFileName.Text = genericReference.Name;
                 iconBlank.Source = getIcon();
             }
-            
+
             iconBlank.Visibility = System.Windows.Visibility.Visible;
 
             if (genericReference.IsShortcut)
@@ -90,8 +91,16 @@ namespace Prime.Components
 
         private void UserControl_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
+            if (e.LeftButton != MouseButtonState.Pressed) return;
+
             if (ItemDoubleClicked != null)
-                ItemDoubleClicked.Invoke(reference);
+                ItemDoubleClicked.Invoke(this, reference);
+        }
+
+        private void UserControl_MouseRightButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            if (ItemRightClicked != null)
+                ItemRightClicked.Invoke(this, reference);
         }
 
         public bool IsTarget { get; set; }
@@ -109,7 +118,7 @@ namespace Prime.Components
                 //icon = "folder.png";
                 //icon = "folder-vi.png";
                 icon = "modern-files/folder.png";
-                //icon = "dir32.png";
+            //icon = "dir32.png";
             else
             {
                 string ext = (item as File).Extension;
@@ -211,5 +220,21 @@ namespace Prime.Components
             }
             return new BitmapImage(new Uri(header + icon, UriKind.Absolute));
         }
+
+        public bool Selected
+        {
+            set
+            {
+                if (value)
+                {
+                    textFileName.Foreground = Brushes.White;
+                }
+                else
+                {
+                    textFileName.Foreground = Brushes.Black;
+                }
+            }
+        }
+
     }
 }

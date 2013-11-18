@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.IO;
+using Prime.FileSystem;
 using Prime.Components;
 using Microsoft.VisualBasic.FileIO;
 
@@ -119,7 +119,7 @@ namespace Prime
                 Brush textcolor = Brushes.Gray;
                 if (chunk == pathChunks.First())
                 {
-                    var d = new DriveInfo(chunk);
+                    var d = new System.IO.DriveInfo(chunk);
                     crumbText = d.VolumeLabel;
                     if (crumbText == "" && chunk.Substring(0, 1) == Environment.GetFolderPath(Environment.SpecialFolder.Windows).Substring(0, 1))
                         crumbText = "Local Disk";
@@ -198,7 +198,7 @@ namespace Prime
         void staggeredStart()
         {
             // setup column stack
-            columnStack.Initialise(new Prime.Directory(Preferences.Instance.HomeFolderPath));
+            columnStack.Initialise(new Directory(Preferences.Instance.HomeFolderPath));
 
             // subscribe to events
             columnStack.ColumnDirectoryChanged += (o, e) => { displayAddressBar(rich: true); };
