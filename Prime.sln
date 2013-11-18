@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prime", "Prime\Prime.csproj", "{78BF6880-4679-4B00-ABB9-04031A7B8A97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChromeTabs", "Externals\ChromeTabs\ChromeTabs.csproj", "{0208352A-D75A-44B1-9C21-AA54D64D24B6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileSystem", "FileSystem\FileSystem.csproj", "{D26328C0-08D3-4180-B131-472BF4BD13EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,10 +15,10 @@ Global
 		{78BF6880-4679-4B00-ABB9-04031A7B8A97}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{78BF6880-4679-4B00-ABB9-04031A7B8A97}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{78BF6880-4679-4B00-ABB9-04031A7B8A97}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0208352A-D75A-44B1-9C21-AA54D64D24B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0208352A-D75A-44B1-9C21-AA54D64D24B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0208352A-D75A-44B1-9C21-AA54D64D24B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0208352A-D75A-44B1-9C21-AA54D64D24B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D26328C0-08D3-4180-B131-472BF4BD13EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D26328C0-08D3-4180-B131-472BF4BD13EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D26328C0-08D3-4180-B131-472BF4BD13EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D26328C0-08D3-4180-B131-472BF4BD13EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

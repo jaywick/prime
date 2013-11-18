@@ -202,9 +202,6 @@ namespace Prime
 
             // subscribe to events
             columnStack.ColumnDirectoryChanged += (o, e) => { displayAddressBar(rich: true); };
-
-            // add tab
-            
         }
     }
 }

@@ -43,7 +43,7 @@ namespace Prime
 
         private void loadDefaults()
         {
-            HomeFolderPath = Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
+            HomeFolderPath = "";//Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory);
 
             System.Drawing.Rectangle screen = System.Windows.Forms.Screen.PrimaryScreen.WorkingArea;
             WindowWidth = screen.Width * 0.7;

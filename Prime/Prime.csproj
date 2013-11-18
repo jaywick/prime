@@ -72,10 +72,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AlterView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Components\ColumnStack.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -104,9 +100,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AlterView.xaml.cs">
-      <DependentUpon>AlterView.xaml</DependentUpon>
-    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -219,12 +212,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\slides.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Externals\ChromeTabs\ChromeTabs.csproj">
-      <Project>{0208352A-D75A-44B1-9C21-AA54D64D24B6}</Project>
-      <Name>ChromeTabs</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\modern-tools\again.png" />

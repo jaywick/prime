@@ -2,7 +2,7 @@
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:Fluent="clr-namespace:Fluent;assembly=Fluent"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:Components="clr-namespace:Prime.Components" xmlns:ChromeTabs="clr-namespace:ChromeTabs;assembly=ChromeTabs" x:Class="Prime.MainWindow"
+        xmlns:Components="clr-namespace:Prime.Components" x:Class="Prime.MainWindow"
         Title="Prime Beta" Height="634.5" Width="1011.684" MinWidth="600" Icon="Resources/folder.png" Background="{x:Null}">
     <Window.Resources>
         <Style x:Key="TextBoxStyle1" TargetType="{x:Type TextBox}">
